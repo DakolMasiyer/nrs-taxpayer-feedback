@@ -25,8 +25,8 @@ export default function Home() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={NRS_LOGO} alt="Nigeria Revenue Service" className="nrs-nav__logo" />
           <div className="nrs-nav__links">
-            <a href="https://www.nrs.gov.ng/faqs" target="_blank" rel="noopener noreferrer">FAQs</a>
-            <a href="https://www.nrs.gov.ng/offices" target="_blank" rel="noopener noreferrer">Offices</a>
+            <a href="https://www.nrs.gov.ng/help--support/faq" target="_blank" rel="noopener noreferrer">FAQs</a>
+            <a href="https://www.nrs.gov.ng/help--support/office-locator" target="_blank" rel="noopener noreferrer">Offices</a>
             <a href="#form" className="nrs-btn nrs-btn--primary nrs-btn--nav">
               Give Feedback
             </a>
