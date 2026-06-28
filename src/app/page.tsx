@@ -12,9 +12,9 @@ export default function Home() {
             <strong>nrs.gov.ng</strong>
           </span>
           <div className="nrs-topbar__links">
-            <a href="https://rev360.nrs.gov.ng" target="_blank" rel="noopener noreferrer">Rev360 Portal</a>
-            <a href="https://www.nrs.gov.ng/tin-verification" target="_blank" rel="noopener noreferrer">TIN Lookup</a>
-            <a href="https://www.nrs.gov.ng/contact" target="_blank" rel="noopener noreferrer">Contact NRS</a>
+            <a href="https://selfservice.nrs.gov.ng/" target="_blank" rel="noopener noreferrer">Rev360 Portal</a>
+            <a href="https://www.nrs.gov.ng/" target="_blank" rel="noopener noreferrer">TIN Lookup</a>
+            <a href="https://www.nrs.gov.ng/overview/quick-link" target="_blank" rel="noopener noreferrer">Quick Links</a>
           </div>
         </div>
       </div>
