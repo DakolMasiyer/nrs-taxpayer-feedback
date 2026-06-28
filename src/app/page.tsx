@@ -12,9 +12,9 @@ export default function Home() {
             <strong>nrs.gov.ng</strong>
           </span>
           <div className="nrs-topbar__links">
-            <a href="#">Rev360 Portal</a>
-            <a href="#">TIN Lookup</a>
-            <a href="#">Contact NRS</a>
+            <a href="https://rev360.nrs.gov.ng" target="_blank" rel="noopener noreferrer">Rev360 Portal</a>
+            <a href="https://www.nrs.gov.ng/tin-verification" target="_blank" rel="noopener noreferrer">TIN Lookup</a>
+            <a href="https://www.nrs.gov.ng/contact" target="_blank" rel="noopener noreferrer">Contact NRS</a>
           </div>
         </div>
       </div>
@@ -25,8 +25,8 @@ export default function Home() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={NRS_LOGO} alt="Nigeria Revenue Service" className="nrs-nav__logo" />
           <div className="nrs-nav__links">
-            <a href="#faq">FAQs</a>
-            <a href="#offices">Offices</a>
+            <a href="https://www.nrs.gov.ng/faqs" target="_blank" rel="noopener noreferrer">FAQs</a>
+            <a href="https://www.nrs.gov.ng/offices" target="_blank" rel="noopener noreferrer">Offices</a>
             <a href="#form" className="nrs-btn nrs-btn--primary nrs-btn--nav">
               Give Feedback
             </a>
@@ -58,7 +58,7 @@ export default function Home() {
                   />
                 </svg>
               </a>
-              <a href="#form" className="nrs-btn nrs-btn--outline-w">
+              <a href="#faq" className="nrs-btn nrs-btn--outline">
                 Learn more
               </a>
             </div>
@@ -152,8 +152,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FAQ SECTION ── */}
+      <section className="nrs-faq-section" id="faq">
+        <div className="nrs-faq-section__inner">
+          <span className="nrs-section-badge">Questions</span>
+          <h2 className="nrs-section-title">Frequently asked questions</h2>
+
+          {([
+            {
+              q: "Is this feedback truly anonymous?",
+              a: "Yes — completely. We do not collect your name, Tax Identification Number, email address, or any other personal identifier. Your feedback cannot be traced back to you in any way.",
+            },
+            {
+              q: "Who reviews the feedback?",
+              a: "Responses are reviewed by the NRS Service Improvement Office. Aggregated data is also shared with relevant department heads and the Service Excellence Committee on a monthly basis.",
+            },
+            {
+              q: "What happens after I submit?",
+              a: "Your response is immediately logged and included in the next monthly review cycle. Trends and common issues are escalated to management for action planning. You may also see changes in your local NRS office as a direct result of this feedback.",
+            },
+            {
+              q: "Can I submit feedback multiple times?",
+              a: "Yes. We encourage you to submit feedback after each visit to any NRS office, as experience can vary across visits, locations, and staff. Each submission is treated as an independent response.",
+            },
+            {
+              q: "Why is NRS collecting this feedback?",
+              a: "The Nigeria Revenue Service is committed to improving service delivery across all its offices. This programme is part of the NRS Service Excellence Initiative, which aims to make every taxpayer interaction faster, clearer, and more respectful.",
+            },
+            {
+              q: "What if I had a very bad experience?",
+              a: "We are sorry to hear that. Beyond this anonymous survey, you can also raise a formal complaint via the NRS contact page at nrs.gov.ng/contact. Formal complaints are tracked individually and escalated to a dedicated resolution team.",
+            },
+          ] as const).map(({ q, a }) => (
+            <details key={q} className="nrs-faq-item">
+              <summary>{q}</summary>
+              <div className="nrs-faq-body">{a}</div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* ── FOOTER ── */}
-      <footer style={{ background: "var(--nrs-navy)", padding: "28px 0", borderTop: "1px solid rgba(255,255,255,.08)" }}>
+      <footer style={{ background: "#111827", padding: "28px 0", borderTop: "1px solid rgba(255,255,255,.06)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,.35)" }}>
             © {new Date().getFullYear()} Nigeria Revenue Service. All rights reserved.
