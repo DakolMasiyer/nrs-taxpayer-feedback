@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Fragment } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
@@ -100,16 +100,19 @@ function StarRating({
     <div>
       <div className="nrs-star-wrap">
         {["5", "4", "3", "2", "1"].map((star) => (
-          <label key={star} title={`${star} star${star === "1" ? "" : "s"}`}>
+          <Fragment key={star}>
             <input
               type="radio"
+              id={`star-${star}`}
               name="rating"
               value={star}
               checked={value === star}
               onChange={() => onChange(star)}
             />
-            ★
-          </label>
+            <label htmlFor={`star-${star}`} title={`${star} star${star === "1" ? "" : "s"}`}>
+              ★
+            </label>
+          </Fragment>
         ))}
       </div>
       <div className="nrs-star-scale-labels">
