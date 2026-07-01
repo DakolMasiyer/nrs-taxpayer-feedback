@@ -5,7 +5,7 @@ import "./nrs-tokens.css"
 export const metadata: Metadata = {
   title: "NRS Taxpayer Feedback | Nigeria Revenue Service",
   description:
-    "Share your experience at any NRS office. This 3-minute anonymous survey helps the Nigeria Revenue Service improve service delivery.",
+    "Share your experience at any NRS office. This anonymous survey takes less than a minute to complete and helps the Nigeria Revenue Service improve service delivery.",
 }
 
 export default function RootLayout({

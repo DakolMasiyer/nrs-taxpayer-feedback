@@ -9,6 +9,7 @@ const schema = z.object({
   purpose: z.string().min(1, "Please select an option"),
   resolved: z.string().min(1, "Please select an option"),
   wait_time: z.string().min(1, "Please select an option"),
+  resolution_time: z.string().min(1, "Please select an option"),
   visit_count: z.string().min(1, "Please select an option"),
   rating: z.string().min(1, "Please select a rating"),
   comments: z.string().max(1000).optional(),
@@ -23,7 +24,7 @@ const PURPOSE_OPTIONS = [
   "Tax Clearance Certificate (TCC)",
   "Filing / returns help",
   "Assessment or penalty query",
-  "Collecting a document / certificate",
+  "Collecting a document/certificate",
   "General information or enquiry",
   "Updating my details",
   "Other",
@@ -41,6 +42,14 @@ const WAIT_OPTIONS = [
   "15–30 minutes",
   "30 minutes to 1 hour",
   "1–2 hours",
+  "More than 2 hours",
+]
+
+const RESOLUTION_TIME_OPTIONS = [
+  "Less than 15 minutes",
+  "15-30 minutes",
+  "30 minutes to 1 hour",
+  "1-2 hour",
   "More than 2 hours",
 ]
 
@@ -166,6 +175,7 @@ export function FeedbackForm() {
       purpose: "",
       resolved: "",
       wait_time: "",
+      resolution_time: "",
       visit_count: "",
       rating: "",
       comments: "",
@@ -204,6 +214,7 @@ export function FeedbackForm() {
     setValue("purpose", "")
     setValue("resolved", "")
     setValue("wait_time", "")
+    setValue("resolution_time", "")
     setValue("visit_count", "")
     setValue("rating", "")
     setValue("comments", "")
@@ -264,6 +275,22 @@ export function FeedbackForm() {
       <div className="nrs-form-group">
         <div className="nrs-form-label">
           <span className="nrs-q-num">4</span>
+          How long did it take for your issue to be resolved?<span className="nrs-req">*</span>
+        </div>
+        <RadioPills
+          name="resolution_time"
+          options={RESOLUTION_TIME_OPTIONS}
+          value={values.resolution_time}
+          onChange={(v) => setValue("resolution_time", v, { shouldValidate: true })}
+          error={errors.resolution_time?.message}
+        />
+      </div>
+
+      <div className="nrs-form-divider" />
+
+      <div className="nrs-form-group">
+        <div className="nrs-form-label">
+          <span className="nrs-q-num">5</span>
           Is this your first visit for this issue?<span className="nrs-req">*</span>
         </div>
         <RadioPills
@@ -279,7 +306,7 @@ export function FeedbackForm() {
 
       <div className="nrs-form-group">
         <div className="nrs-form-label">
-          <span className="nrs-q-num">5</span>
+          <span className="nrs-q-num">6</span>
           How would you rate the service you received today?<span className="nrs-req">*</span>
         </div>
         <StarRating
@@ -293,7 +320,7 @@ export function FeedbackForm() {
 
       <div className="nrs-form-group" style={{ marginBottom: 0 }}>
         <div className="nrs-form-label">
-          <span className="nrs-q-num">6</span>
+          <span className="nrs-q-num">7</span>
           Anything else you would like to tell us?{" "}
           <span style={{ fontWeight: 400, color: "var(--nrs-gray-500)", marginLeft: 4 }}>
             (optional)

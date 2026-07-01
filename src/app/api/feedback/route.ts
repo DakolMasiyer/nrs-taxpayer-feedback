@@ -14,7 +14,8 @@ import { NextRequest, NextResponse } from "next/server"
  *      const sheet = SpreadsheetApp.openById('YOUR_SHEET_ID').getActiveSheet();
  *      sheet.appendRow([
  *        data.submitted_at, data.purpose, data.resolved,
- *        data.wait_time, data.visit_count, data.rating, data.comments
+ *        data.wait_time, data.resolution_time, data.visit_count,
+ *        data.rating, data.comments
  *      ]);
  *      return ContentService
  *        .createTextOutput(JSON.stringify({ ok: true }))
@@ -29,7 +30,7 @@ import { NextRequest, NextResponse } from "next/server"
  * 1. power.microsoft.com → Create → Automated cloud flow
  * 2. Trigger: "When an HTTP request is received" (set Method: POST)
  * 3. Action: "Add a row into a table" → pick your OneDrive Excel file
- *    Map columns: Timestamp, Purpose, Resolved, Wait Time, Visit Count, Rating, Comments
+ *    Map columns: Timestamp, Purpose, Resolved, Wait Time, Resolution Time, Visit Count, Rating, Comments
  * 4. Save → copy the HTTP POST URL from the trigger step
  * 5. Set NRS_WEBHOOK_URL=<paste URL here> in .env.local
  */

@@ -44,8 +44,8 @@ export default function Home() {
               <em>how we serve Nigeria.</em>
             </h1>
             <p className="nrs-hero__sub">
-              Help us improve every visit. This 3-minute anonymous survey captures your
-              experience at any NRS office — no name or Tax ID required.
+              Help us improve every visit. This survey takes less than a minute to complete.
+              It captures your experience at any NRS office — no name or Tax ID required.
             </p>
             <div className="nrs-hero__actions">
               <a href="#form" className="nrs-btn nrs-btn--primary">
@@ -64,8 +64,8 @@ export default function Home() {
             </div>
             <div className="nrs-hero__stats">
               {[
-                { value: "6", label: "Questions total" },
-                { value: "3 min", label: "Estimated time" },
+                { value: "7", label: "Questions total" },
+                { value: "< 1 min", label: "Estimated time" },
                 { value: "100%", label: "Anonymous" },
               ].map(({ value, label }) => (
                 <div key={label}>
@@ -91,7 +91,7 @@ export default function Home() {
               {[
                 { num: "1", title: "Purpose of visit", body: "TIN, registration, payments, TCC and more" },
                 { num: "2", title: "Resolution status", body: "Whether your issue was fully resolved" },
-                { num: "3", title: "Wait time & visit count", body: "How long you waited, and if you've been before" },
+                { num: "3", title: "Wait & resolution times", body: "How long you waited, and how long resolution took" },
               ].map(({ num, title, body }) => (
                 <div key={num} className="nrs-mini-step">
                   <div className="nrs-mini-step__num">{num}</div>
@@ -126,14 +126,14 @@ export default function Home() {
               </div>
               <div className="nrs-form-card__header-text">
                 <strong>NRS Taxpayer Feedback Survey</strong>
-                <span>Your feedback is anonymous and takes about 3 minutes</span>
+                <span>Your feedback is anonymous and takes less than a minute to complete</span>
               </div>
             </div>
 
             <div className="nrs-form-card__meta">
               <div className="nrs-form-card__meta-item">
                 <svg viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
-                ~3 minutes
+                &lt; 1 minute
               </div>
               <div className="nrs-form-card__meta-item">
                 <svg viewBox="0 0 20 20"><path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /></svg>
@@ -141,7 +141,7 @@ export default function Home() {
               </div>
               <div className="nrs-form-card__meta-item">
                 <svg viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" /></svg>
-                6 questions
+                7 questions
               </div>
             </div>
 
